@@ -1,0 +1,160 @@
+
+
+
+//========================================
+//          1 - HELPERS FOLDER
+//========================================
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//          2 - COMPONENTS FOLDER
+//========================================
+@import "../2-components/_breadcrumb.scss";
+@import "../2-components/_table.scss";
+
+
+//========================================
+//          4 - LAYOUTS FOLDER
+//========================================
+@import "../4-layouts/_single-banner.scss";
+
+
+/*=====================================
+           CHECKOUT PART STYLE
+======================================*/
+.checkout-part {
+    padding: 100px 0px;
+}
+
+// CHECKOUT LOGIN ACTION
+.checkout-action {
+    text-align: center;
+    margin-bottom: 65px;
+    padding: 18px 20px 15px;
+    background: var(--whitecolor);
+    border-top: 3px solid var(--brandcolor);
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+
+    i {
+        color: var(--brandcolor);
+        margin-right: 8px;
+    }
+
+    span {
+        font-weight: 500;
+        color: var(--headingcolor);
+
+        a {
+            color: var(--headingcolor);
+            @include cursor__transition;
+
+            &:hover {
+                color: var(--brandcolor);
+            }
+        }
+    }
+}
+
+// checkout form parent
+.checkout-form {
+    padding: 0px 15px;
+}
+
+// checkout form title
+.check-form-title {
+    margin-bottom: 50px;
+
+    h3 {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 50px;
+            left: 0px;
+            width: 100%;
+            height: 1px;
+            background: var(--bordercolor);
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            top: 50px;
+            left: 0px;
+            width: 50px;
+            height: 2px;
+            background: var(--brandcolor);
+        }
+    }
+}
+
+// checkout table parent
+.checkout-table {
+    padding: 70px 10px;
+}
+
+// checkout total charge
+.checkout-charge {
+    margin-bottom: 45px;
+    
+    ul {
+        width: 600px;
+        margin: 0 auto;
+        background: var(--whitecolor);
+        border-top: 3px solid var(--brandcolor);
+        box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+
+        li {
+            padding: 18px 30px;
+            @include flex__center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--bordercolor);
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            span {
+                font-size: 18px;
+                color: var(--headingcolor);
+            }
+        }
+    }
+}
+
+// checkout order place button
+.check-order-btn {
+    text-align: center;
+}
+
+
+// for checkout part responsive
+@media (max-width: 767px) {
+    .checkout-part {
+        padding: 60px 0px;
+    }
+
+    .checkout-table {
+        padding: 30px 0px;
+    }
+
+    .checkout-form {
+        padding: 0px 0px;
+    }
+
+    .table-scroll {
+        overflow-x: scroll;
+
+        .table-list {
+            width: 800px;
+        }
+    }
+
+    .checkout-charge {
+        ul {
+            width: 100%;
+        }
+    }
+}

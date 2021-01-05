@@ -1,0 +1,50 @@
+
+
+
+//========================================
+//          1 - HELPERS FOLDER
+//========================================
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//          2 - COMPONENTS FOLDER
+//========================================
+@import "../2-components/_breadcrumb.scss";
+@import "../2-components/_table.scss";
+
+
+//========================================
+//          4 - LAYOUTS FOLDER
+//========================================
+@import "../4-layouts/_single-banner.scss";
+
+
+/*=====================================
+            CARTLIST PART STYLE
+======================================*/
+.compare-part {
+    padding: 100px 0px;
+}
+
+.compare-btn {
+    text-align: center;
+    margin-top: 50px;
+}
+
+// compare part responsive style
+@media (max-width: 991px) {
+    .compare-list {
+        overflow-x: scroll;
+    }
+
+    .table-list {
+        width: 900px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cart-part {
+        padding: 60px 0px;
+    }
+}

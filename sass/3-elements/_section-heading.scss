@@ -1,0 +1,78 @@
+
+
+
+
+/*=====================================
+            SECTION HEADING STYLE
+======================================*/
+.section {
+    padding: 100px 0px 0px;
+}
+
+.section-heading {
+    @include flex__center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.title {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        right: -80px;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 2px;
+        border-radius: 30px;
+        background: var(--brandcolor);
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 70%;
+        right: -55px;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 35px;
+        height: 2px;
+        border-radius: 30px;
+        background: var(--brandcolor);
+    }
+}
+
+// FOR SECTION HEADING RESPONSIVE
+@media (max-width: 767px) {
+    .section {
+        padding: 60px 0px 0px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        margin-bottom: 30px;
+
+        h2 {
+            margin-bottom: 45px;
+        }
+    }
+
+    .title {
+        &::before,
+        &::after {
+            top: 0px;
+            right: 50%;
+            transform: translate(50%, 0);
+        }
+
+        &::before {
+            top: 50px;
+        }
+
+        &::after {
+            top: 55px;
+        }
+    }
+}

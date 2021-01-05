@@ -1,0 +1,50 @@
+
+
+
+/*=====================================
+           BUTTON ELEMENT STYLE
+======================================*/
+
+/* FOR ALL BUTTON STYLE */ 
+.btn {
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 13px 32px;
+    letter-spacing: 0.5px;
+    border-radius: 3px;
+    border: 2px solid var(--brandcolor);
+
+    &:focus {
+        box-shadow: none !important;
+    }
+
+    i {
+        margin-right: 8px;
+    }
+}
+
+
+/* FOR ALL INLINE BUTTON COLOR */ 
+.btn-inline {
+    color: var(--whitecolor);
+    background: var(--brandcolor);
+
+    &:hover {
+        color: var(--brandcolor);
+        background: var(--whitecolor);
+    }
+}
+
+
+/* FOR ALL OUTLINE BUTTON COLOR */ 
+.btn-outline {
+    color: var(--brandcolor);
+    background: var(--whitecolor);
+
+    &:hover {
+        color: var(--whitecolor);
+        background: var(--brandcolor);
+    }
+}

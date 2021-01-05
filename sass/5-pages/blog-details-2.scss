@@ -1,0 +1,346 @@
+
+
+
+//========================================
+//          1 - HELPERS FOLDER
+//========================================
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//          2 - COMPONENTS FOLDER
+//========================================
+@import "../2-components/_breadcrumb.scss";
+@import "../2-components/_pagination.scss";
+
+
+//========================================
+//          3 - ELEMENTS FOLDER
+//========================================
+@import "../3-elements/_section-heading.scss";
+@import "../3-elements/_blog-card.scss";
+@import "../3-elements/_blog-inline.scss";
+@import "../3-elements/_blog-sidebar.scss";
+
+
+//========================================
+//          4 - LAYOUTS FOLDER
+//========================================
+@import "../4-layouts/_single-banner.scss";
+
+
+/*=====================================
+          BLOG DETAILS PART STYLE
+======================================*/
+.blogdet-part {
+    padding: 100px 0px;
+}
+
+.details-title {
+    margin-bottom: 20px;
+
+    h2 {
+        line-height: 42px;
+
+        a {
+            color: var(--headingcolor);
+        }
+    }
+}
+
+.details-meta {
+    @include flex__center;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+
+    li {
+        @include flex__center;
+        padding: 0px 18px;
+        border-right: 1px solid var(--bordercolor);
+
+        &:first-child {
+            padding-left: 0px;
+        }
+
+        &:last-child {
+            padding-right: 0px;
+            border-right: none;
+        }
+
+        i {
+            font-size: 14px;
+            margin-right: 8px;
+            margin-top: -2px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+.details-img {
+    margin-bottom: 30px;
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+.details-descrip {
+    p {
+        margin-bottom: 35px;
+
+        span {
+            display: block;
+            margin-top: 25px;
+        }
+    }
+}
+
+.details-subtitle {
+    margin-bottom: 35px;
+
+    h4 {
+        margin-bottom: 25px;
+    }
+
+    p {
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+.details-quote {
+    padding: 50px 50px;
+    background: var(--navbarcolor);
+    border-left: 5px solid var(--brandcolor);
+    margin-bottom: 45px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        font-size: 22px;
+        font-style: italic;
+        line-height: 35px;
+        margin-bottom: 35px;
+    }
+
+    span {
+        font-weight: 500;
+        align-self: flex-end;
+        text-transform: capitalize;
+    }
+}
+
+.details-list {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 50px;
+
+    li {
+        margin-bottom: 20px;
+    }
+}
+
+// FOR BLOG DETAILS TAG LIST
+.blogdet-tag {
+    @include flex__start;
+    margin-bottom: 30px;
+
+    h4 {
+        margin: 3px 15px 0px 0px;
+    }
+
+    ul {
+        li {
+            display: inline-block;
+            margin: 0px 8px 12px 0px;
+    
+            a {
+                color: var(--headingcolor);
+                font-size: 14px;
+                padding: 2px 15px;
+                border-radius: 30px;
+                text-transform: capitalize;
+                border: 1px solid var(--bordercolor);
+                @include cursor__transition;
+    
+                &:hover {
+                    color: var(--whitecolor);
+                    background: var(--brandcolor);
+                    border-color: var(--brandcolor);
+                }
+            }
+        }
+    }
+} 
+
+// for blog details icon list
+.blogdet-icon {
+    @include flex__start;
+
+    h4 {
+        margin: 8px 15px 0px 0px;
+    }
+
+    ul {
+        li {
+            display: inline-block;
+            margin: 0px 8px 12px 0px;
+        }
+    }
+}
+
+// blog details suggest slider
+.blogdet-slider {
+    padding-bottom: 45px;
+    border-bottom: 1px solid var(--bordercolor);
+
+    .blog-card {
+        margin: 0px 15px;
+    }
+}
+
+.blog-user-part {
+    padding: 50px 0px;
+}
+
+// for blog details comment
+.blog-det-comment {
+    h3 {
+        margin-bottom: 15px;
+
+        span {
+            font-family: sans-serif;
+            font-weight: 500;
+        }
+    }
+}
+
+// for blog details comment list
+.comment-list {
+    li {
+        ul {
+            margin-left: 100px;
+        }
+    }
+}
+
+// for blog details comment 
+.comment {
+    display: flex;
+    padding: 45px 0px;
+    border-top: 1px solid var(--bordercolor);
+    position: relative;
+}
+
+// for blog details comment user image
+.comment-img {
+    margin-right: 30px;
+
+    a {
+        img {
+            width: 80px;
+            border-radius: 5px;
+        }
+    }
+}
+
+// for blog details comment content
+.comment-content {
+    h4 {
+        font-weight: 600;
+        margin-bottom: 10px;
+
+        span {
+            font-size: 14px;
+            font-weight: 500;
+            display: block;
+            margin-top: 5px;
+        }
+    }
+}
+
+// for blog details comment reply arrow
+.comment-reply {
+    position: absolute;
+    top: 45px;
+    right: 15px;
+
+    a {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text);
+        text-transform: capitalize;
+
+        &:hover {
+            color: var(--brandcolor);
+        }
+
+        i {
+            margin-right: 8px;
+        }
+    }
+}
+
+.form-heading {
+    h3 {
+        margin-bottom: 30px;
+    }
+}
+
+.form-btn {
+    .btn {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 767px) {
+    .blogdet-part {
+        padding: 50px 0px;
+    }
+
+    .details-meta {
+        flex-wrap: wrap;
+    }
+
+    .comment {
+        flex-direction: column;
+    }
+
+    .comment-img {
+        margin-bottom: 15px;
+    }
+
+    .comment-list li ul {
+        margin-left: 60px;
+    }
+
+    .blogdet-slider {
+        .blog-card {
+            width: 250px;
+            margin: 0px 8px;
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .blogdet-slider {
+        .blog-card {
+            width: 320px;
+            margin: 0px 8px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .blogdet-part {
+        padding: 80px 0px;
+    }
+}

@@ -1,0 +1,82 @@
+
+
+
+//========================================
+//          1 - HELPERS FOLDER
+//========================================
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//          2 - COMPONENTS FOLDER
+//========================================
+@import "../2-components/_breadcrumb.scss";
+@import "../2-components/_pagination.scss";
+
+
+//========================================
+//          3 - ELEMENTS FOLDER
+//========================================
+@import "../3-elements/_section-heading.scss";
+@import "../3-elements/_blog-card.scss";
+@import "../3-elements/_blog-inline.scss";
+@import "../3-elements/_blog-sidebar.scss";
+
+
+//========================================
+//          4 - LAYOUTS FOLDER
+//========================================
+@import "../4-layouts/_single-banner.scss";
+
+
+/*=====================================
+            BLOGLIST PART STYLE
+======================================*/
+.bloglist-part {
+    padding: 100px 0px;
+}
+
+// PRODUCT LIST TOP FILTER
+.product-filter {
+    background: var(--whitecolor);
+    border-radius: 3px;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    @include flex__center;
+    justify-content: space-between;
+}
+
+.product-card-type {
+    display: flex;
+
+    li {
+        margin-left: 12px;
+
+        i {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 3px;
+            cursor: pointer;
+            background: var(--graycolor);
+        }
+    }
+}
+
+.grid-verti.active,
+.grid-hori.active {
+    i {
+        color: var(--whitecolor);
+        background: var(--brandcolor);
+    }
+}
+
+//========================================
+//        BLOGLIST RESPONSIVE STYLE
+//========================================
+@media (max-width: 767px) {
+    .bloglist-part {
+        padding: 60px 0px;
+    }
+}

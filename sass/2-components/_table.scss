@@ -1,0 +1,124 @@
+
+
+/*=====================================
+          TABLE COMPONENT STYLE
+======================================*/
+.table-list {
+    width: 100%;
+
+    // TABLE HEADING STRUCTURE
+    thead {
+        tr {
+            background: var(--brandcolor);
+
+            th {
+                text-align: center;
+                padding: 15px 25px;
+                color: var(--whitecolor);
+                font-weight: var(--mweight);
+                border-right: 1px solid var(--headerborder);
+
+                &:first-child {
+                    border-radius: 3px 0px 0px 3px;
+                }
+
+                &:last-child {
+                    border-right: none;
+                    border-radius: 0px 3px 3px 0px;
+                }
+            }
+        }
+    }
+
+    // TABLE BODY STRUCTURE
+    tbody {
+        tr {
+            border-bottom: 1px solid var(--bordercolor);
+
+            td {
+                text-align: center;
+                padding: 15px 25px;
+                border-right: 1px solid var(--bordercolor);
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+}
+
+// TABLE PRODUCT IMAGE
+.table-product {
+    img {
+        width: 100px;
+        border-radius: 3px;
+        background: var(--whitecolor);
+    }
+}
+
+// TABLE QUANTITY INPUT
+.table-quantity {
+    input {
+        width: 100px;
+        padding: 0px 15px;
+        height: 40px;
+        font-size: 18px;
+        border-radius: 3px;
+        border: 2px solid var(--bordercolor);
+
+        &:focus-within {
+            border-color: var(--brandcolor);
+        }
+    }
+}
+
+// TABLE SHOPPING BUTTON
+.table-shop {
+    .btn {
+        padding: 10px 25px;
+    }
+}
+
+// TABLE ACTION BUTTON
+.table-action {
+    text-align: center;
+
+    a {
+        i {
+            width: 35px;
+            height: 35px;
+            font-size: 14px;
+            line-height: 35px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 3px;
+            color: var(--brandcolor);
+            background: var(--whitecolor);
+            text-shadow: var(--tshadow);
+            @include cursor__transition;
+
+            &:hover {
+                color: var(--whitecolor);
+                background: var(--brandcolor);
+            }
+        }
+    }
+}
+
+// TABLE PRODUCT DESCRIPTION
+.table-desc {
+    p {
+        width: 150px;
+        text-align: left;
+
+        a {
+            font-size: 14px;
+            font-weight: 500;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

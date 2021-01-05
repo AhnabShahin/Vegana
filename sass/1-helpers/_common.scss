@@ -1,0 +1,118 @@
+
+
+
+/*=====================================
+            ALL COMMON STYLE
+======================================*/
+* {
+    margin: 0px;
+    padding: 0px;
+    outline: 0px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+span,
+label {
+    margin-bottom: 0px;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: var(--bodysize);
+    font-weight: var(--rweight);
+    font-family: var(--pfamily);
+    line-height: 26px;
+    color: var(--textcolor);
+    background: var(--graycolor);
+}
+
+h1 {
+    font-size: var(--h1size);
+    font-weight: var(--bweight);
+    font-family: var(--sfamily);
+    color: var(--headingcolor);
+}
+
+h2 {
+    font-size: var(--h2size);
+    font-weight: var(--bweight);
+    font-family: var(--sfamily);
+    color: var(--headingcolor);
+}
+
+h3 {
+    font-size: var(--h3size);
+    font-weight: var(--bweight);
+    font-family: var(--sfamily);
+    color: var(--headingcolor);
+}
+
+h4 {
+    font-size: var(--h4size);
+    font-weight: var(--mweight);
+    font-family: var(--pfamily);
+    color: var(--headingcolor);
+}
+
+h5 {
+    font-size: var(--h5size);
+    font-weight: var(--mweight);
+    font-family: var(--pfamily);
+    color: var(--headingcolor);
+}
+
+h6 {
+    font-size: var(--h6size);
+    font-weight: var(--mweight);
+    font-family: var(--pfamily);
+    color: var(--headingcolor);
+}
+
+input,
+textarea {
+    &::placeholder {
+        color: var(--pldrcolor);
+        font-size: 15px;
+        letter-spacing: 0.3px;
+    }
+}
+
+button:focus {
+    outline: none;
+}
+
+@media (max-width: 991px) {
+    .cont-rev {
+        flex-direction: column-reverse;
+    }
+}

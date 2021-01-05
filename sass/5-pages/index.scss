@@ -1,0 +1,237 @@
+
+
+
+//========================================
+//          1 - HELPERS FOLDER
+//========================================
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//          3 - ELEMENTS FOLDER
+//========================================
+@import "../3-elements/_section-heading.scss";
+@import "../3-elements/_product-card.scss";
+@import "../3-elements/_blog-card.scss";
+@import "../3-elements/_blog-inline.scss";
+@import "../3-elements/_feature-card.scss";
+
+
+/*=====================================
+            BANNER PART STYLE
+======================================*/
+.banner-part {
+    .dandik,
+    .bamdik {
+        top: 50%;
+    }
+
+    .dandik {
+        right: 0px;
+    }
+    
+    .bamdik{
+        left: 0px;
+    }
+}
+
+// BANNER SLIDER-1
+.banner-1 {
+    background: url(../../images/banner/01.jpg);
+    @include background__property;
+    padding: 130px 0px;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(93, 186, 71, 0.3), rgba(85, 173, 65, 0.1));
+        z-index: -1;
+    }
+}
+
+.banner-content-1 {
+    z-index: 3;
+
+    h1 {
+        color: var(--whitecolor);
+        margin-bottom: 25px;
+    }
+
+    p {
+        font-size: 18px;
+        color: var(--graycolor);
+        margin-bottom: 45px;
+    }
+}
+
+// BANNER SLIDER 2
+.banner-2 {
+    background: url(../../images/banner/02.jpg);
+    @include background__property;
+    padding: 130px 0px;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(93, 186, 71, 0.3), rgba(85, 173, 65, 0.1));
+        z-index: -1;
+    }
+}
+
+.banner-content-2 {
+    width: 580px;
+    margin: 0 auto;
+    text-align: center;
+
+    h1 {
+        margin-bottom: 25px;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 45px;
+    }
+}
+
+// BANNER SLIDER 3
+.banner-3 {
+    background: url(../../images/banner/03.jpg);
+    @include background__property;
+    padding: 130px 0px;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(93, 186, 71, 0.3), rgba(85, 173, 65, 0.1));
+        z-index: -1;
+    }
+}
+
+.banner-content-3 {
+    h1 {
+        margin-bottom: 25px;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 45px;
+    }
+}
+
+// FOR BANNER RESPONSIVE
+@media (max-width: 767px) {
+    .banner-part.slider-dots ul {
+        bottom: 40px;
+    }
+
+    .banner-1 {
+        padding: 70px 0px;
+        background-position: right;
+    }
+
+    .banner-content-1 {
+        h1 {
+            font-size: 32px;
+        }
+    }
+
+    .banner-2 {
+        padding: 70px 0px;
+        background-position: top;
+    }
+
+    .banner-content-2 {
+        width: 100%;
+
+        h1 {
+            font-size: 32px;
+        }
+    }
+
+    .banner-3 {
+        padding: 70px 0px;
+        background-position: left;
+    }
+
+    .banner-content-3 {
+        h1 {
+            font-size: 32px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .banner-content-1,
+    .banner-content-3,
+    .banner-content-3 {
+        h1 {
+            font-size: 43px;
+        }
+    }
+}
+
+/*=====================================
+            BLOG PART STYLE
+======================================*/
+.blog-part {
+    margin-bottom: 100px;
+}
+
+@media (max-width: 767px) {
+    .blog-part {
+        margin-bottom: 60px;
+    }
+}
+
+/*=====================================
+            FEATURE PART STYLE
+======================================*/
+.feature-part {
+    padding: 80px 0px;
+    background: var(--whitecolor);
+}
+
+@media (max-width: 767px) {
+    .feature-part {
+        padding: 60px 0px 10px;
+    }
+
+    .feature-card {
+        width: 290px;
+        padding: 0px;
+        margin: 0 auto 50px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .feature-part {
+        padding: 60px 0px;
+    }
+
+    .feature-card {
+        padding: 0px;
+    }
+}
+
+
+
+
+
+
+
+

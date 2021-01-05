@@ -1,0 +1,464 @@
+
+
+//========================================
+//          1 - HELPERS FOLDER
+//========================================
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//          2 - COMPONENTS FOLDER
+//========================================
+@import "../2-components/_nav-tabs.scss";
+ 
+
+/*=====================================
+            SIGNIN-UP FORM STYLE
+======================================*/
+.sign-part {
+    @include flex__center;
+    justify-content: space-between;
+}
+
+.sign-content {
+    width: 60%;
+    height: 100vh;
+    background: url(../../images/banner/03.jpg);
+    @include background__property;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+        z-index: -1;
+    }
+}
+
+.content-cover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 600px;
+
+    a {
+        margin-bottom: 35px;
+
+        img {
+            width: 190px;
+            height: auto;
+        }
+    }
+    
+    h1 {
+        color: #3dd01d;
+        font-size: 50px;
+        line-height: 60px;
+    }
+}
+
+.sign-form {
+    width: 40%;
+    height: 100vh;
+    background: var(--graycolor);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.back-arrow {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+
+    a {
+        &:nth-child(1) {
+            display: none;
+        }
+
+        i {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 3px;
+            font-size: 16px;
+            color: var(--whitecolor);
+            background: var(--brandcolor);
+            text-shadow: var(--tshadow);
+            box-shadow: var(--bshadow);
+
+            &:hover {
+                color: var(--brandcolor);
+                background: var(--whitecolor);
+            }
+        }
+    }
+}
+
+.sign-cate {
+    margin-bottom: 50px;
+}
+
+.sign-form {
+    .tab-pane {
+        display: none;
+        padding: 0px 50px;
+    }
+    
+    .tab-pane.active {
+        display: block;
+    }
+}
+
+.sign-heading {
+    text-align: center;
+    margin-bottom: 45px;
+
+    h2 {
+        margin-bottom: 7px;
+    }
+}
+
+.form {
+    margin-bottom: 45px;
+}
+
+.form-label {
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+
+    &:focus-within {
+        button {
+            i {
+                display: block;
+            }
+        }
+
+        small {
+            display: block;
+        }
+    }
+
+    input {
+        border: none;
+        width: 100%;
+        height: 45px;
+        border-radius: 3px;
+        padding: 0px 55px 0px 20px;
+        border: 1px solid var(--bordercolor);
+        @include cursor__transition;
+
+        &:focus-within {
+            border: 1px solid var(--brandcolor);
+        }
+    }
+
+    button {
+        border: none;
+        background: none;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+
+        i {
+            font-size: 16px;
+            color: #aaaaaa;
+            display: none;
+        }
+    }
+
+    small {
+        display: none;
+        padding: 3px 20px;
+    }
+}
+
+.form-suggest {
+    text-align: center;
+
+    p {
+        color: var(--headingcolor);
+
+        a {
+            font-weight: 500;
+        
+            &:hover {
+                color: var(--brandcolor);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.form-btn {
+    display: block;
+
+    .btn {
+        width: 100%;
+        height: 45px;
+    }
+}
+
+.form-option {
+    @include flex__center;
+    margin-bottom: 30px;
+
+    li {
+        margin: 0px 8px;
+
+        a {
+            width: 125px;
+            padding: 5px;
+            color: var(--whitecolor);
+            border-radius: 3px;
+
+            i {
+                width: 32px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                border-radius: 3px;
+                font-size: 12px;
+                margin-right: 8px;
+                text-shadow: var(--tshadow);
+            }
+
+            span {
+                font-size: 14px;
+                text-transform: capitalize;
+                text-shadow: var(--tshadow);
+            }
+        }
+
+        &:nth-child(1) {
+            a {
+                background: #4267B2;
+
+                i {
+                    background: #375797;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            a {
+                background: #1DA1F2;
+                
+                i {
+                    background: #1a95e2;
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            a {
+                background: #DB4437;
+                
+                i {
+                    background: #be3a2e;
+                }
+            }
+        }
+    }
+}
+
+.or-text {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 1px;
+        background: var(--bordercolor);
+        z-index: -1;
+    }
+
+    p {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 3px;
+        background: var(--whitecolor);
+        border: 1px solid var(--bordercolor);
+        margin: 0px auto 30px;
+    }
+}
+
+.form-link {
+    @include flex__center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    a {
+        font-size: 15px;
+        color: var(--textcolor);
+
+        &:hover {
+            color: var(--brandcolor);
+            text-decoration: underline;
+        }
+    }
+
+    .custom-control-label {
+        font-size: 15px;
+        line-height: 26px;
+        cursor: pointer;
+    
+        &::before {
+            top: 5px;
+        }
+    
+        &::after {
+            top: 5px;
+        }
+    }
+    
+    .custom-control-input:checked~.custom-control-label::before {
+        border-color: #ff5644;
+        background-color: #ff5644;
+    }
+}
+
+.form-bottom {
+    text-align: center;
+    margin-bottom: 50px;
+
+    p {
+        color: #666666;
+        font-size: 18px;
+        width: 290px;
+        margin: 0 auto;
+
+        span {
+            font-weight: 500;
+            color: var(--brandcolor);
+        }
+    }
+}
+
+
+/*=====================================
+        SIGNIN-UP RESPONSIVE STYLE
+======================================*/
+@media (max-width: 767px) {
+    .sign-form {
+        width: 100%;
+
+        .tab-pane {
+            padding: 0px 25px;
+        }
+    }
+
+    .form-option {
+        li {
+            a {
+                width: auto;
+
+                i {
+                    width: 60px;
+                    margin-right: 0px;
+                }
+
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .sign-content {
+        display: none;
+    }
+
+    .back-arrow {
+        position: inherit;
+        @include flex__center;
+        justify-content: space-between;
+        padding: 15px;
+
+        a {
+            &:nth-child(1) {
+                display: block;
+            }
+
+            img {
+                width: 155px;
+            }
+
+            i {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                color: var(--brandcolor);
+                background: var(--whitecolor);
+
+                &:hover {
+                    color: var(--whitecolor);
+                    background: var(--brandcolor);
+                }
+            }
+        }
+    }
+
+    .form-bottom {
+        p {
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 1199px) {
+    .sign-content {
+        width: 45%;
+    }
+
+    .content-cover {
+        width: 235px;
+
+        a {
+            img {
+                width: 150px;
+            }
+        }
+
+        h1 {
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+
+    .sign-form {
+        width: 55%;
+
+        .tab-pane {
+            padding: 0px 25px;
+        }
+    }
+
+    .form-bottom {
+        p {
+            width: 260px;
+        }
+    }
+}

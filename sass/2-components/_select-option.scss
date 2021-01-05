@@ -1,0 +1,43 @@
+
+
+
+/*=====================================
+        SELECT-OPTION ELEMENT STYLE
+======================================*/
+
+/* FOR HEADER SECTION LANGUAGE & CURRENCY */
+.header-select {
+    border: none;
+    width: 100px;
+    height: 45px;
+    padding: 8px;
+    font-size: 15px;
+    color: var(--whitecolor);
+    background: transparent;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    .clr {
+        color: var(--headingcolor);
+    }
+}
+
+
+/* FOR PRODUCT-LIST PAGE SHORT ITEM */
+.product-short-select {
+    height: 40px;
+    width: 250px;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:focus {
+        border-color: var(--brandcolor);
+        box-shadow: none;
+    }
+}
+

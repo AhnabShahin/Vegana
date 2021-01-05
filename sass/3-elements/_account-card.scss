@@ -1,0 +1,86 @@
+
+
+
+
+/*=====================================
+        ACCOUNT CARD ELEMENT STYLE
+======================================*/
+.account-card {
+    height: 300px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    padding: 0px 30px 30px;
+    background: var(--whitecolor);
+    box-shadow: var(--bcardshadow);
+}
+
+.account-title {
+    padding: 18px 0px;
+    margin-bottom: 25px;
+    position: relative;
+    @include flex__center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--bordercolor);
+
+    &::before {
+        position: absolute;
+        content: "";
+        bottom: -2px;
+        left: 0px;
+        width: 50px;
+        height: 2px;
+        background: var(--brandcolor);
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    a {
+        width: 50px;
+        height: 30px;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 5px;
+        text-transform: capitalize;
+        color: var(--brandcolor);
+        background: var(--graycolor);
+
+        &:hover {
+            color: var(--whitecolor);
+            background: var(--brandcolor);
+        }
+    }
+}
+
+.account-list {
+    li {
+        margin-bottom: 15px;
+        @include flex__center;
+        justify-content: flex-start;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+
+        h6 {
+            width: 100px;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .account-card {
+        height: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .account-list {
+        li {
+            flex-wrap: wrap;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+
+
+
+//========================================
+//          1 - HELPERS FOLDER
+//========================================
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//          2 - COMPONENTS FOLDER
+//========================================
+@import "../2-components/_breadcrumb.scss";
+@import "../2-components/_table.scss";
+
+
+//========================================
+//          3 - ELEMENTS FOLDER
+//========================================
+@import "../3-elements/_section-heading.scss";
+
+
+//========================================
+//          4 - LAYOUTS FOLDER
+//========================================
+@import "../4-layouts/_single-banner.scss";
+
+
+/*=====================================
+            WISHLIST PART STYLE
+======================================*/
+.wish-part {
+    padding: 100px 0px;
+}
+
+.wish-list {
+    margin-bottom: 50px;
+}
+
+// WISHLIST BOTTOM DUEL BUTTON
+.wish-btn {
+    text-align: center;
+
+    .btn {
+        font-size: 15px;
+        margin: 0px 15px;
+        padding: 15px 35px;
+    }
+}
+
+//========================================
+//        CART PART RESPONSIVE STYLE
+//========================================
+@media (max-width: 991px) {
+    .wish-list {
+        overflow-x: scroll;
+    }
+
+    .table-list {
+        width: 900px;
+    }
+}
+
+@media (max-width: 767px) {
+    .wish-part {
+        padding: 60px 0px;
+    }
+
+    .wish-btn .btn {
+        margin: 15px 0px;
+    }
+}

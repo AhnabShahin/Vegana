@@ -1,0 +1,213 @@
+
+
+
+//========================================
+//          1 - HELPERS FOLDER
+//========================================
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//          2 - COMPONENTS FOLDER
+//========================================
+@import "../2-components/_breadcrumb.scss";
+
+
+//========================================
+//          3 - ELEMENTS FOLDER
+//========================================
+@import "../3-elements/_section-heading.scss";
+
+
+//========================================
+//          4 - LAYOUTS FOLDER
+//========================================
+@import "../4-layouts/_single-banner.scss";
+
+
+/*=====================================
+            CONTACT PART STYLE
+======================================*/
+.contact-part {
+    padding: 100px 0px;
+}
+
+// CONTACT HEADING 
+.contact-heading {
+    text-align: center;
+    margin-bottom: 50px;
+
+    .title {
+        display: inline-block;
+        margin-bottom: 17px;
+    }
+
+    p {
+        width: 570px;
+        font-size: 18px;
+        margin: 0 auto;
+    }
+}
+
+// CONTACT INFORMATION CARD
+.contact-info {
+    text-align: center;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    padding: 50px 30px 45px;
+    background: var(--whitecolor);
+    box-shadow: var(--bcardshadow);
+
+    i {
+        font-size: 50px;
+        color: var(--brandcolor);
+        margin-bottom: 25px;
+    }
+
+    .title {
+        margin-bottom: 40px;
+
+        &::before,
+        &::after {
+            top: 0px;
+            right: 50%;
+            transform: translate(50%, 0);
+        }
+
+        &::before {
+            top: 45px;
+        }
+
+        &::after {
+            top: 50px;
+        }
+    }
+    
+    p {
+        span {
+            display: block;
+        }
+    }
+}
+
+// CONTACT FORM
+.contact-form {
+    border-radius: 3px;
+    padding: 50px 30px 45px;
+    background: var(--whitecolor);
+    box-shadow: var(--bcardshadow);
+}
+
+.contact-label {
+    display: block;
+    position: relative;
+    margin-bottom: 25px;
+
+    &:focus-within {
+        input,
+        textarea {
+            border: 1px solid var(--brandcolor);
+        }
+
+        i {
+            color: var(--whitecolor);
+            background: var(--brandcolor);
+        }
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        height: 50px;
+        display: block;
+        border-radius: 3px;
+        padding: 0px 20px 0px 65px;
+        border: 1px solid var(--bordercolor);
+        @include cursor__transition;
+    }
+
+    textarea {
+        height: 200px;
+        padding: 10px 20px 0px 65px;
+    }
+
+    i {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 50px;
+        height: 50px;
+        font-size: 14px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 3px 0px 0px 3px;
+        color: var(--brandcolor);
+        background: var(--navbarcolor);
+        @include cursor__transition;
+    }
+}
+
+.contact-form {
+    .btn {
+        width: 100%;
+    }
+}
+
+// FOR GOOGLE MAP
+.contact-map {
+    padding: 30px;
+    border-radius: 3px;
+    background: var(--whitecolor);
+    box-shadow: var(--bcardshadow);
+
+    iframe {
+        height: 526px;
+    }
+}
+
+//========================================
+//        CONTACT RESPONSIVE STYLE
+//========================================
+@media (max-width: 991px) {
+    .contact-part {
+        padding: 60px 0px;
+    }
+
+    .contact-form {
+        padding: 50px 15px 45px;
+        margin-bottom: 30px;
+    }
+
+    .contact-map {
+        padding: 15px;
+
+        iframe {
+            height: 300px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-heading {
+        margin-bottom: 30px;
+
+        .title {
+            font-size: 40px;
+            margin-bottom: 30px;
+
+
+            &::before {
+                top: 55px;
+            }
+
+            &::after {
+                top: 60px;
+            }
+        }
+
+        p {
+            width: 100%;
+            font-size: 16px;
+        }
+    }
+}

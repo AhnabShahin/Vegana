@@ -1,0 +1,220 @@
+
+
+/*=====================================
+            FORM ELEMENT STYLE
+======================================*/
+
+/* FOR NAVBAR SEARCH FORM */ 
+.search-form {
+    width: 100%;
+    display: block;
+    position: relative;
+
+    input {
+        width: 100%;
+        height: 45px;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        background: var(--whitecolor);
+        padding: 0px 150px 0px 20px;
+    }
+
+    .btn {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 45px;
+        padding: 11px 32px;
+    }
+}
+
+
+/* FOR NEWSLATTER FORM */ 
+.footer-form {
+    width: 100%;
+
+    form {
+        @include flex__center;
+        flex-direction: column;
+    
+        input {
+            width: 100%;
+            height: 50px;
+            border: none;
+            background: var(--graycolor);
+            border-radius: 8px;
+            padding: 0px 20px;
+            margin-bottom: 20px;
+        }
+    
+        .btn {
+            width: 100%;
+            border-radius: 8px;
+            text-align: center;
+            padding: 12px 0px;
+            font-size: 13px;
+
+            i {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+
+/* FOR REVIEW FORM */ 
+.review-form {
+    h3 {
+        margin: 0px 0px 25px 15px;
+    }
+
+    .btn {
+        margin-left: 15px;;
+    }
+}
+
+.grid-input {
+    @include flex__center;
+    margin-bottom: 30px;
+
+    input {
+        width: 100%;
+        height: 50px;
+        margin: 0px 15px;
+        padding: 0px 20px;
+        border-radius: 8px;
+        background: var(--whitecolor);
+        border: 1px solid var(--bordercolor);
+
+        &:focus-within {
+            border-color: var(--brandcolor);
+        }
+    }
+}
+
+.row-input {
+    margin: 0px 15px 20px;
+
+    input {
+        width: 100%;
+        height: 50px;
+        padding: 15px 20px;
+        border-radius: 8px;
+        background: var(--whitecolor);
+        border: 1px solid var(--bordercolor);
+
+        &:focus-within {
+            border-color: var(--brandcolor);
+        }
+    }
+
+    textarea {
+        width: 100%;
+        height: 250px;
+        padding: 15px 20px;
+        border-radius: 8px;
+        background: var(--whitecolor);
+        border: 1px solid var(--bordercolor);
+
+        &:focus-within {
+            border-color: var(--brandcolor);
+        }
+    }
+}
+
+.review-rating {
+    margin: 0px 15px 30px;
+    display: flex;
+
+    li {
+        margin-right: 15px;
+
+        i {
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            border-radius: 50%;
+            background: var(--graycolor);
+            color: var(--textcolor);
+            font-size: 14px;
+            text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+
+            &:hover {
+                color: var(--whitecolor);
+                background: var(--starcolor);
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .grid-input {
+        flex-direction: column;
+        margin-bottom: 0px;
+
+        input {
+            margin-bottom: 20px;
+        }
+    }
+    .row-input {
+        margin: 0px 0px 20px;
+    }
+
+    .star-rating {
+        margin: 0px 0px 20px !important;
+    }
+
+    .review-form {
+        .btn {
+            margin-left: 0px;
+        }
+    }
+}
+
+
+
+
+
+.form-group {
+    margin-bottom: 25px;
+
+    textarea {
+        height: 180px;
+        padding: 12px 20px;
+    }
+}
+
+.form-label {
+    font-weight: 500;
+    margin: 0px 0px 7px 3px;
+}
+
+.form-control {
+    width: 100%;
+    height: 45px;
+    padding: 0px 20px;
+    border-radius: 8px;
+    background: var(--whitecolor);
+    border: 1px solid var(--bordercolor);
+
+    &:focus-within {
+        background: var(--whitecolor);
+        border-color: var(--brandcolor);
+        box-shadow: none;
+        outline: 0;
+    }
+}
+
+.form-control::-webkit-file-upload-button {
+    height: 45px;
+    border: none;
+    background: none;
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+}

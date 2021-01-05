@@ -1,0 +1,71 @@
+
+
+/*=====================================
+            HEADER PART STYLE
+======================================*/
+.header-part {
+    background: var(--brandcolor);
+}
+
+.header-info {
+    @include flex__start;
+    align-items: center;
+
+    li {
+        @include flex__center;
+        padding: 10px 25px;
+        border-right: 1px solid var(--headerborder);
+
+        &:last-child {
+            border-right: 0px;
+        }
+
+        i {
+            margin-right: 8px;
+        }
+
+        i,
+        p {
+            font-size: 15px;
+            color: var(--whitecolor);
+        }
+    }
+}
+
+.header-option,
+.header-curr,
+.header-lang {
+    @include flex__center;
+}
+
+.header-option {
+    justify-content: flex-end;
+}
+
+.header-curr,
+.header-lang {
+    i {
+        font-size: 15px;
+        color: var(--whitecolor);
+        margin-top: 2px;
+    }
+}
+
+.header-lang {
+    padding-left: 30px;
+    border-left: 1px solid var(--headerborder);
+}
+
+@media (max-width: 767px) {
+    .header-info {
+        display: none;
+    }
+
+    .header-option {
+        justify-content: center;
+    }
+
+    .header-curr {
+        padding-left: 30px;
+    }
+}

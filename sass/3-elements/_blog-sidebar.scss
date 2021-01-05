@@ -1,0 +1,156 @@
+
+
+
+//========================================
+//          1 - HELPERS FOLDER
+//========================================
+@import "../1-helpers/_mixin.scss";
+
+
+/*=====================================
+        BLOG SIDEBAR ELEMENTS STYLE
+======================================*/
+// SIDEBAR CONTENT TITLE
+.sidebar-content {
+    margin-bottom: 50px;
+
+    .title {
+        margin-bottom: 48px;
+
+        &::before,
+        &::after {
+            top: 0px;
+            right: 0px;
+            left: 0px;
+            transform: translate(0, 0);
+        }
+
+        &::before {
+            top: 45px;
+        }
+
+        &::after {
+            top: 50px;
+        }
+    }
+}
+
+// FOR SIDEBAR SEARCH FORM
+.sidebar-form {
+    position: relative;
+
+    input {
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 45px;
+        border-radius: 3px;
+        padding: 0px 20px 0px 50px;
+        background: var(--whitecolor);
+        box-shadow: var(--bcardshadow);
+    }
+
+    i {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        color: var(--brandcolor);
+    }
+}
+
+// FOR SIDEBAR BLOG LIST
+.sidebar-blog {
+    .title {
+        display: inline-block;
+    }
+}
+
+// FOR SIDEBAR CATEGORY LIST
+.sidebar-cate {
+    li {
+        @include flex__center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--bordercolor);
+        margin-bottom: 18px;
+        padding-bottom: 18px;
+        
+        &:hover {
+            h6 {
+                a {
+                    color: var(--brandcolor);
+                }
+            }
+
+            p {
+                background: var(--brandcolor);
+            }
+        }
+
+        h6 {
+            font-weight: 500;
+
+            a {
+                color: var(--headingcolor);
+                @include cursor__transition;
+            }
+        }
+
+        p {
+            font-size: 13px;
+            font-weight: 500;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            color: var(--whitecolor);
+            background: var(--headingcolor);
+            @include cursor__transition;
+        }
+    }
+}
+
+// FOR SIDEBAR TAG LIST
+.sidebar-tag {
+    li {
+        display: inline-block;
+        margin: 0px 8px 12px 0px;
+
+        a {
+            color: var(--headingcolor);
+            font-size: 14px;
+            padding: 2px 15px;
+            border-radius: 30px;
+            text-transform: capitalize;
+            border: 1px solid var(--bordercolor);
+            @include cursor__transition;
+
+            &:hover {
+                color: var(--whitecolor);
+                background: var(--brandcolor);
+                border-color: var(--brandcolor);
+            }
+        }
+    }
+}
+
+// FOR SIDEBAR FOLLOW ICON
+.sidebar-icon {
+    display: flex;
+
+    li {
+        margin-right: 18px;
+    }
+}
+
+// FOR SIDEBAR BANNER AD
+.sidebar-ad {
+    text-align: center;
+
+    a {
+        img {
+            width: 100%;
+            border-radius: 3px;
+        }
+    }
+}

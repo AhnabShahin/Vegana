@@ -1,0 +1,21 @@
+
+
+/*=====================================
+          CHECKBOX PART STYLE
+======================================*/
+.custom-checkbox {
+    padding-left: 25px;
+}
+
+.custom-control-label {
+    &::before,
+    &::after {
+        left: -25px;
+    }
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    background: var(--brandcolor);
+    border-color: var(--brandcolor);
+    box-shadow: none;
+}

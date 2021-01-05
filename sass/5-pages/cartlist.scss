@@ -1,0 +1,166 @@
+
+
+
+//========================================
+//          1 - HELPERS FOLDER
+//========================================
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//          2 - COMPONENTS FOLDER
+//========================================
+@import "../2-components/_breadcrumb.scss";
+@import "../2-components/_table.scss";
+
+
+//========================================
+//          3 - ELEMENTS FOLDER
+//========================================
+@import "../3-elements/_section-heading.scss";
+
+
+//========================================
+//          4 - LAYOUTS FOLDER
+//========================================
+@import "../4-layouts/_single-banner.scss";
+
+
+/*=====================================
+            CARTLIST PART STYLE
+======================================*/
+.cart-part {
+    padding: 100px 0px;
+}
+
+.cart-list {
+    margin-bottom: 30px;
+}
+
+// CART BACK BUTTON
+.cart-back {
+   margin-top: 10px;
+}
+
+// CART COUPON FORM
+.cart-cupon {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 80px;
+
+    form {
+        width: 400px;
+        display: block;
+        position: relative;
+        box-shadow: var(--bcardshadow);
+    
+        input {
+            width: 100%;
+            height: 66px;
+            border: none;
+            outline: none;
+            border-radius: 3px;
+            background: var(--whitecolor);
+            padding: 0px 190px 0px 20px;
+        }
+    
+        .btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            height: 50px;
+            padding: 11px 32px;
+        }
+    }
+}
+
+// CART TOTALS COST
+.cart-totals {
+    width: 600px;
+    margin: 0 auto 45px;
+    text-align: center;
+    background: var(--whitecolor);
+    border-top: 3px solid var(--brandcolor);
+    box-shadow: var(--bcardshadow);
+
+    .title {
+        margin: 25px 0px;
+
+        &::before,
+        &::after {
+            top: 0px;
+            right: 50%;
+            transform: translate(50%, 0);
+        }
+
+        &::before {
+            top: 50px;
+        }
+
+        &::after {
+            top: 55px;
+        }
+    }
+
+    ul {
+        li {
+            padding: 18px 30px;
+            @include flex__center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--bordercolor);
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            span {
+                font-size: 18px;
+                color: var(--headingcolor);
+            }
+        }
+    }
+}
+
+// CART PROCEED BUTTON
+.cart-proceed {
+    text-align: center;
+
+    .btn {
+        height: 60px;
+        font-size: 15px;
+        padding: 18px 35px;
+    }
+}
+
+//========================================
+//        CART PART RESPONSIVE STYLE
+//========================================
+@media (max-width: 991px) {
+    .cart-list {
+        overflow-x: scroll;
+    }
+
+    .table-list {
+        width: 900px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cart-part {
+        padding: 60px 0px;
+    }
+
+    .cart-back {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .cart-cupon {
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    .cart-totals {
+        width: 100%;
+    }
+}

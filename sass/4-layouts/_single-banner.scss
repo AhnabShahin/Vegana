@@ -1,0 +1,46 @@
+
+
+
+/*=====================================
+        SINGLE BANNER PART STYLE
+======================================*/
+.single-banner {
+    background: url(../../images/banner/04.jpg);
+    @include background__property;
+    padding: 100px 0px;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(92, 186, 71, 0.3), rgba(85, 172, 65, 0.2));
+        z-index: -1;
+    }
+}
+
+.single-content {
+    text-align: center;
+
+    h2 {
+        font-size: 38px;
+        margin-bottom: 18px;
+        color: var(--whitecolor);
+    }
+}
+
+@media (max-width: 767px) {
+    .single-banner {
+        padding: 80px 0px;
+    };
+
+    .single-content {
+        h2 {
+            font-size: 35px;
+        }
+    }
+}

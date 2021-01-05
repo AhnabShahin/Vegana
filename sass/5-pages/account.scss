@@ -1,0 +1,156 @@
+
+
+
+//========================================
+//          1 - HELPERS FOLDER
+//========================================
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//          2 - COMPONENTS FOLDER
+//========================================
+@import "../2-components/_breadcrumb.scss";
+@import "../2-components/_nav-tabs.scss";
+@import "../2-components/_table.scss";
+@import "../2-components/_alert.scss";
+
+
+//========================================
+//          3 - ELEMENTS FOLDER
+//========================================
+@import "../3-elements/_account-card.scss";
+
+
+//========================================
+//          4 - LAYOUTS FOLDER
+//========================================
+@import "../4-layouts/_single-banner.scss";
+
+
+/*=====================================
+            ACCOUNT PART STYLE
+======================================*/
+.account-part {
+    padding: 0px 0px 40px;
+}
+
+// for account nav tabs menu
+.account-menu {
+    .nav {
+        li {
+            width: inherit;
+
+            a {
+                width: inherit;
+                padding: 14px 35px;
+            }
+        }
+    }
+}
+
+// for tab heading
+.section-heading {
+    justify-content: center;
+
+    h2 {
+        margin-bottom: 0px;
+    }
+}
+
+// for dasboard tab content
+.account-dash {
+    margin-bottom: 30px;
+}
+
+// for order tab content
+.order-content {
+    margin-bottom: 50px;
+
+    tr {
+        th,
+        td {
+            text-align: center;
+        }
+    }
+}
+
+.order-btn {
+    text-align: center;
+}
+
+// for profile tab content
+.profile-intro {
+    @include flex__start;
+    justify-content: space-between;
+
+    .account-list {
+        li {
+            h6 {
+                width: 150px;
+            }
+        }
+    }
+}
+
+.profile-author {
+    a {
+        margin-bottom: 25px;
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+        }
+    }
+
+    h4 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 3px;
+    }
+
+    p {
+        font-size: 15px;
+
+        span {
+            font-weight: 500;
+            margin-right: 5px;
+        }
+    }
+}
+
+// for settings tab content
+.form-group {
+    margin: 0px 10px 25px;
+}
+
+.form-btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+
+// for my account page responsive
+@media(max-width: 991px) {
+    .account-part {
+        padding: 0px;
+    }
+    
+    .account-menu {
+        overflow-x: scroll;
+
+        .nav {
+            justify-content: flex-start;
+        }
+    }
+
+    .order-content {
+        overflow-x: scroll;
+
+        .table-list {
+            width: 990px;
+        }
+    }
+}

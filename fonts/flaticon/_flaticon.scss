@@ -1,0 +1,78 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 11/11/2020 12:43
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-groceries:before { content: "\f100"; }
+.flaticon-bread:before { content: "\f101"; }
+.flaticon-drinks:before { content: "\f102"; }
+.flaticon-vegetable:before { content: "\f103"; }
+.flaticon-milk:before { content: "\f104"; }
+.flaticon-spread:before { content: "\f105"; }
+.flaticon-cheese:before { content: "\f106"; }
+.flaticon-healthy-food:before { content: "\f107"; }
+.flaticon-salad:before { content: "\f108"; }
+.flaticon-delivery-truck:before { content: "\f109"; }
+.flaticon-save-money:before { content: "\f10a"; }
+.flaticon-customer-service:before { content: "\f10b"; }
+.flaticon-nuts:before { content: "\f10c"; }
+.flaticon-tofu:before { content: "\f10d"; }
+.flaticon-seaweed:before { content: "\f10e"; }
+.flaticon-marmite:before { content: "\f10f"; }
+.flaticon-express-pot:before { content: "\f110"; }
+.flaticon-cereal:before { content: "\f111"; }
+.flaticon-peas:before { content: "\f112"; }
+    
+    $font-Flaticon-groceries: "\f100";
+    $font-Flaticon-bread: "\f101";
+    $font-Flaticon-drinks: "\f102";
+    $font-Flaticon-vegetable: "\f103";
+    $font-Flaticon-milk: "\f104";
+    $font-Flaticon-spread: "\f105";
+    $font-Flaticon-cheese: "\f106";
+    $font-Flaticon-healthy-food: "\f107";
+    $font-Flaticon-salad: "\f108";
+    $font-Flaticon-delivery-truck: "\f109";
+    $font-Flaticon-save-money: "\f10a";
+    $font-Flaticon-customer-service: "\f10b";
+    $font-Flaticon-nuts: "\f10c";
+    $font-Flaticon-tofu: "\f10d";
+    $font-Flaticon-seaweed: "\f10e";
+    $font-Flaticon-marmite: "\f10f";
+    $font-Flaticon-express-pot: "\f110";
+    $font-Flaticon-cereal: "\f111";
+    $font-Flaticon-peas: "\f112";

@@ -1,0 +1,231 @@
+
+
+
+
+
+//========================================
+//          1 - HELPERS FOLDER
+//========================================
+@import "../1-helpers/_mixin.scss";
+
+
+//========================================
+//          3 - ELEMENTS FOLDER
+//========================================
+@import "../2-components/_breadcrumb.scss";
+@import "../2-components/_pagination.scss";
+@import "../2-components/_price-range.scss";
+@import "../2-components/_checkbox.scss";
+
+
+//========================================
+//          3 - ELEMENTS FOLDER
+//========================================
+@import "../3-elements/_section-heading.scss";
+@import "../3-elements/_product-card.scss";
+
+
+//========================================
+//          4 - LAYOUTS FOLDER
+//========================================
+@import "../4-layouts/_single-banner.scss";
+
+
+/*=====================================
+        PRODUCT LIST PART STYLE
+======================================*/
+.product-list {
+    padding: 100px 0px;
+}
+
+// PRODUCT AD BANNER IMAGE
+.product-ad {
+    margin-bottom: 30px;
+
+    a {
+        img {
+            width: 100%;
+            border-radius: 3px;
+        }
+    }
+}
+
+// PRODUCT SIDEBAR FILTER 
+.product-bar {
+    padding: 25px 15px;
+    border-radius: 3px;
+    background: var(--whitecolor);
+
+    h6 {
+        padding-bottom: 15px;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--bordercolor);
+    }
+}
+
+.product-bar-content {
+    input {
+        width: 100%;
+        height: 40px;
+        padding: 0px 15px;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        border: 1px solid var(--bordercolor);
+    }
+
+    .custom-control-label {
+        font-size: 15px;
+        cursor: pointer;
+        text-transform: capitalize;
+    }
+}
+
+.scroll-list {
+    height: 254px;
+    padding: 0px 8px;
+    overflow-y: scroll;
+
+    li {
+        margin: 8px 0px;
+        @include flex__center;
+        justify-content: space-between;
+
+        &:hover {
+            .custom-control-label,
+            .product-cate-number {
+                color: var(--brandcolor);
+            }
+        }
+    }
+}
+
+.product-cate-number {
+    font-size: 15px;
+}
+
+.clear-filter-btn {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 0px;
+    margin-top: 10px;
+    border-radius: 3px;
+    @include flex__center;
+    color: var(--brandcolor);
+    border: 1px solid var(--brandcolor);
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
+    @include cursor__transition;
+
+    &:hover {
+        color: var(--whitecolor);
+        background: var(--brandcolor);
+    }
+
+    i {
+        margin-top: -2px;
+        margin-right: 5px;
+    }
+}
+
+// PRODUCT LIST TOP FILTER
+.product-filter {
+    background: var(--whitecolor);
+    border-radius: 3px;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    @include flex__center;
+    justify-content: space-between;
+}
+
+.product-card-type {
+    display: flex;
+
+    li {
+        margin-left: 12px;
+
+        i {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 3px;
+            cursor: pointer;
+            background: var(--graycolor);
+        }
+    }
+}
+
+.grid-verti.active,
+.grid-hori.active {
+    i {
+        color: var(--whitecolor);
+        background: var(--brandcolor);
+    }
+}
+
+// PRODUCT CARD GAPE
+.card-gape {
+    margin-bottom: 30px;
+}
+
+// REQUIRE CODE OF THIS PAGE
+body {
+    background: var(--graycolor);
+}
+
+.pagination {
+    margin-bottom: 30px;
+}
+
+.nasted-dropdown {
+    height: 254px;
+}
+
+// PRODUCT LIST RESPONSIVE STYLE
+@media (max-width: 991px) {
+    .product-bar {
+        margin-bottom: 30px;
+    }
+
+    .product-ad {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .product-list {
+        padding: 80px 0px;
+    }
+
+    .product-filter {
+        flex-direction: column;
+    }
+
+    .product-page-number,
+    .product-short-select {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 575px) {
+    .product-list {
+        padding: 60px 0px;
+    }
+
+    .product-card-parent {
+        .col-6 {
+            padding: 0px 10px;
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .scroll-list,
+    .nasted-dropdown {
+        height: 210px;
+    }
+}

@@ -1,0 +1,88 @@
+
+
+
+
+/*=====================================
+        NEWSLETTER PART STYLE
+======================================*/
+.news-part {
+    padding: 70px 0px;
+    background: url(../../images/banner/04.jpg);
+    @include background__property;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: -1;
+    }
+}
+
+.news-content {
+    margin-top: 8px;
+
+    h2 {
+        font-size: 35px;
+        color: var(--whitecolor);
+    }
+}
+
+.news-form {
+    input {
+        height: 55px;
+    }
+
+    .btn {
+        top: 5px;
+        right: 5px;
+    }
+}
+
+@media (max-width: 767px) {
+    .news-part {
+        padding: 60px 0px;
+    }
+    
+    .news-content {
+        margin: 0px 0px 30px;
+        text-align: center;
+    }
+
+    .news-form {
+        input {
+            padding: 0px 75px 0px 20px;
+        }
+
+        .btn {
+            padding: 11px 20px;
+
+            i {
+                margin-right: 0px;
+            }
+
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .news-content {
+        margin-top: 0px;
+    }
+
+    .news-form {
+        margin-top: 15px;
+
+        input {
+            padding: 0px 90px 0px 20px;
+        }
+    }
+}
