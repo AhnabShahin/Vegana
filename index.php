@@ -1,4 +1,6 @@
+<?php require_once("./includes/db.php"); ?>
 <?php session_start() ; ?>
+<?php ob_start() ; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -128,15 +130,29 @@
                             if(isset($_SESSION['login'])){?>
 
 
-                            <form class="">
+                            <form class="" method="POST">
                                 
-                                <button class="btn btn-inline">
+                                <button class="btn btn-inline" name="logout">
                                     <span>Logout</span>
                                 </button>
                             </form>
+                            
+                            <?php 
+                            if(isset($_POST['logout'])){
+                                echo 'my name';
+                                if(isset($_SESSION['login'])){
+                                    session_destroy();
+                                    unset($_SESSION['login']);
+                                    unset($_SESSION['email']);
+                                    header("Location: ./index.php");
+
+                                }
+                                
+                            }
+                            ?>
                             <?php
                             }else{?>
-                             <form class="">
+                             <form class="" action="signin-up.php">
                                 <button class="btn btn-inline">
                                     <span>Login</span>
                                 </button>
@@ -146,7 +162,7 @@
                             <?php
                             }
                             ?>
-                                <li><a class="icon icon-inline" href="signin-up.php"><i class="fas fa-user"></i></a></li>
+                                <li><a class="icon icon-inline" href=""><i class="fas fa-user"></i></a></li>
                                 <li><a class="icon icon-inline" href="wishlist.html"><i class="fas fa-heart"></i><sup>0</sup></a></li>
                                 <li><a class="icon icon-inline" href="cartlist.html"><i class="fas fa-shopping-cart"></i><sup>0</sup></a></li>
                             </ul>
@@ -204,7 +220,7 @@
                                             <i class="fas fa-chevron-down"></i>
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li><a class="dropdown-link" href="product-list-1.html">Product list-1</a></li>
+                                            <li><a class="dropdown-link" href="product-list-1.php">Product list-1</a></li>
                                             <li><a class="dropdown-link" href="product-list-2.html">Product list-2</a></li>
                                             <li><a class="dropdown-link" href="product-list-3.html">Product list-3</a></li>
                                             <li><a class="dropdown-link" href="product-details-1.html">Product details-1</a></li>
@@ -303,7 +319,7 @@
                             <div class="banner-content-1">
                                 <h1>Stay healthy life with vegans food.</h1>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse suscipit illum nesciunt, pariatur explicabo nemo!</p>
-                                <a class="btn btn-inline" href="product-list-1.html">
+                                <a class="btn btn-inline" href="product-list-1.php">
                                     <i class="fas fa-shopping-basket"></i>
                                     <span>shop now</span>
                                 </a>
@@ -319,7 +335,7 @@
                             <div class="banner-content-2">
                                 <h1>Healthy food comes form  healthy ingredients.</h1>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse suscipit illum nesciunt, pariatur explicabo nemo!</p>
-                                <a class="btn btn-inline" href="product-list-1.html">
+                                <a class="btn btn-inline" href="product-list-1.php">
                                     <i class="fas fa-shopping-basket"></i>
                                     <span>shop now</span>
                                 </a>
@@ -335,7 +351,7 @@
                             <div class="banner-content-3">
                                 <h1>Make your food organic and vegan.</h1>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse suscipit illum nesciunt, pariatur explicabo nemo!</p>
-                                <a class="btn btn-inline" href="product-list-1.html">
+                                <a class="btn btn-inline" href="product-list-1.php">
                                     <i class="fas fa-shopping-basket"></i>
                                     <span>shop now</span>
                                 </a>
@@ -360,7 +376,7 @@
                     <div class="col-lg-12">
                         <div class="section-heading">
                             <h2 class="title">Trending products</h2>
-                            <a href="product-list-1.html" class="btn btn-outline"><i class="fas fa-eye"></i> show more</a>
+                            <a href="product-list-1.php" class="btn btn-outline"><i class="fas fa-eye"></i> show more</a>
                         </div>
                     </div>
                 </div>
@@ -554,7 +570,7 @@
                     <div class="col-lg-12">
                         <div class="section-heading">
                             <h2 class="title">Best selling products</h2>
-                            <a href="product-list-1.html" class="btn btn-outline"><i class="fas fa-eye"></i> show more</a>
+                            <a href="product-list-1.php" class="btn btn-outline"><i class="fas fa-eye"></i> show more</a>
                         </div>
                     </div>
                 </div>
@@ -742,22 +758,36 @@
         <!--=====================================
                     NEW PART START
         =======================================-->
+
         <section class="section new-part">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-heading">
                             <h2 class="title">New products</h2>
-                            <a href="product-list-1.html" class="btn btn-outline"><i class="fas fa-eye"></i> show more</a>
+                            <a href="product-list-1.php" class="btn btn-outline"><i class="fas fa-eye"></i> show more</a>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product-slider slider-arrow">
+        <?php 
+        $sql4="SELECT * FROM products where product_status=:status ORDER BY id DESC";
+        $stmt4=$pdo->prepare($sql4);
+        $stmt4->execute([
+            ':status'=>'Active',
+        ]);
+        while($products=$stmt4->fetch(PDO::FETCH_ASSOC)){
+            $product_name=$products['product_name'];
+            $product_details=$products['product_details'];
+            $product_price=$products['product_price'];
+            $product_rating=$products['product_rating'];
+            $product_img=$products['product_img'];
+        ?>
                             <div class="product-card">
                                 <div class="product-img">
-                                    <img src="images/product/11.png" alt="product-11">
+                                    <img src="images/product/<?php echo $product_img; ?>" alt="product-11">
                                     <ul class="product-widget">
                                         <li><button><i class="fas fa-eye"></i></button></li>
                                         <li><button><i class="fas fa-heart"></i></button></li>
@@ -766,13 +796,13 @@
                                 </div>
                                 <div class="product-content">
                                     <div class="product-name">
-                                        <h6><a href="#">Heirloom Quinoa</a></h6>
+                                        <h6><a href="#"><?php echo $product_name ; ?></a></h6>
                                     </div>
                                     <div class="product-price">
-                                        <h6><del>$80</del> $150</h6>
+                                        <h6><del>$80</del> $<?php echo $product_price ; ?></h6>
                                         <div class="product-rating">
                                             <i class="fas fa-star"></i>
-                                            <span>4.5/2</span>
+                                            <span><?php echo $product_rating ; ?>/5</span>
                                         </div>
                                     </div>
                                     <div class="product-btn">
@@ -783,146 +813,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-card">
-                                <div class="product-img">
-                                    <img src="images/product/12.png" alt="product-12">
-                                    <ul class="product-widget">
-                                        <li><button><i class="fas fa-eye"></i></button></li>
-                                        <li><button><i class="fas fa-heart"></i></button></li>
-                                        <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                    </ul>
-                                </div>
-                                <div class="product-content">
-                                    <div class="product-name">
-                                        <h6><a href="#">Heirloom Quinoa</a></h6>
-                                    </div>
-                                    <div class="product-price">
-                                        <h6><del>$80</del> $150</h6>
-                                        <div class="product-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.5/2</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-btn">
-                                        <a href="#">
-                                            <i class="fas fa-shopping-basket"></i>
-                                            <span>Add to Cart</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-img">
-                                    <img src="images/product/13.png" alt="product-13">
-                                    <ul class="product-widget">
-                                        <li><button><i class="fas fa-eye"></i></button></li>
-                                        <li><button><i class="fas fa-heart"></i></button></li>
-                                        <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                    </ul>
-                                </div>
-                                <div class="product-content">
-                                    <div class="product-name">
-                                        <h6><a href="#">Heirloom Quinoa</a></h6>
-                                    </div>
-                                    <div class="product-price">
-                                        <h6><del>$80</del> $150</h6>
-                                        <div class="product-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.5/2</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-btn">
-                                        <a href="#">
-                                            <i class="fas fa-shopping-basket"></i>
-                                            <span>Add to Cart</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-img">
-                                    <img src="images/product/14.png" alt="product-14">
-                                    <ul class="product-widget">
-                                        <li><button><i class="fas fa-eye"></i></button></li>
-                                        <li><button><i class="fas fa-heart"></i></button></li>
-                                        <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                    </ul>
-                                </div>
-                                <div class="product-content">
-                                    <div class="product-name">
-                                        <h6><a href="#">Heirloom Quinoa</a></h6>
-                                    </div>
-                                    <div class="product-price">
-                                        <h6><del>$80</del> $150</h6>
-                                        <div class="product-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.5/2</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-btn">
-                                        <a href="#">
-                                            <i class="fas fa-shopping-basket"></i>
-                                            <span>Add to Cart</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-img">
-                                    <img src="images/product/15.png" alt="product-15">
-                                    <ul class="product-widget">
-                                        <li><button><i class="fas fa-eye"></i></button></li>
-                                        <li><button><i class="fas fa-heart"></i></button></li>
-                                        <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                    </ul>
-                                </div>
-                                <div class="product-content">
-                                    <div class="product-name">
-                                        <h6><a href="#">Heirloom Quinoa</a></h6>
-                                    </div>
-                                    <div class="product-price">
-                                        <h6><del>$80</del> $150</h6>
-                                        <div class="product-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.5/2</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-btn">
-                                        <a href="#">
-                                            <i class="fas fa-shopping-basket"></i>
-                                            <span>Add to Cart</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-img">
-                                    <img src="images/product/10.png" alt="product-10">
-                                    <ul class="product-widget">
-                                        <li><button><i class="fas fa-eye"></i></button></li>
-                                        <li><button><i class="fas fa-heart"></i></button></li>
-                                        <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                    </ul>
-                                </div>
-                                <div class="product-content">
-                                    <div class="product-name">
-                                        <h6><a href="#">Heirloom Quinoa</a></h6>
-                                    </div>
-                                    <div class="product-price">
-                                        <h6><del>$80</del> $150</h6>
-                                        <div class="product-rating">
-                                            <i class="fas fa-star"></i>
-                                            <span>4.5/2</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-btn">
-                                        <a href="#">
-                                            <i class="fas fa-shopping-basket"></i>
-                                            <span>Add to Cart</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+        <?php  } ?>
                         </div>
                     </div>
                 </div>

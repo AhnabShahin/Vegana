@@ -1,6 +1,12 @@
 <?php ob_start() ; ?>
 <?php session_start() ; ?>
 <?php require_once("./includes/db.php"); ?>
+<?php 
+if(isset($_SESSION['login'])) {
+    header("location: ./index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

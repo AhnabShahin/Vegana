@@ -1,3 +1,4 @@
+<?php require_once("./includes/db.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -568,12 +569,15 @@
                                     <div class="product-page-number">
                                         <p>Showing 1–9 of 130 results</p>
                                     </div>
+                                    <form>
                                     <select class="product-short-select custom-select">
-                                        <option selected>Short by Best Sell</option>
-                                        <option value="1">Short by New Item</option>
+                                        <option  value="0">Short by Best Sell</option>
+                                        <option  value="1">Short by New Item</option>
                                         <option value="2">Short by Popularity</option>
-                                        <option value="3">Short by Average review</option>
+                                        <button type="submit" name="submit" class="btn btn-outline"><option value="3">Short by Average review</option>sign in now</button>
                                     </select>
+                                    
+                                    </form>
                                     <ul class="product-card-type">
                                         <li class="grid-verti active"><i class="fas fa-grip-vertical"></i></li>
                                         <li class="grid-hori"><i class="fas fa-grip-horizontal"></i></li>
@@ -582,10 +586,27 @@
                             </div>
                         </div>
                         <div class="row product-card-parent">
+                            <?php 
+                            if(isset($_POST['0'])){
+                            $sql4="SELECT * FROM products where product_status=:status ORDER BY id DESC";
+                            }
+                            $stmt4=$pdo->prepare($sql4);
+                            $stmt4->execute([
+                                ':status'=>'Active',
+                            ]);
+                            while($products=$stmt4->fetch(PDO::FETCH_ASSOC)){
+                                $product_name=$products['product_name'];
+                                $product_details=$products['product_details'];
+                                $product_price=$products['product_price'];
+                                $product_rating=$products['product_rating'];
+                                $product_img=$products['product_img'];
+                            ?>
+
+                            
                             <div class="col-6 col-sm-6 col-md-4 col-lg-4">
                                 <div class="product-card card-gape">
                                     <div class="product-img">
-                                        <img src="images/product/01.png" alt="product-1">
+                                        <img src="./images/product/<?php echo $product_img; ?>" alt="product-1">
                                         <ul class="product-widget">
                                             <li><button><i class="fas fa-eye"></i></button></li>
                                             <li><button><i class="fas fa-heart"></i></button></li>
@@ -594,13 +615,13 @@
                                     </div>
                                     <div class="product-content">
                                         <div class="product-name">
-                                            <h6><a href="#">Heirloom Quinoa</a></h6>
+                                            <h6><a href="#"><?php echo $product_name ; ?></a></h6>
                                         </div>
                                         <div class="product-price">
-                                            <h6><del>$80</del> $150</h6>
+                                            <h6><del>$80</del> $<?php echo $product_price ; ?></h6>
                                             <div class="product-rating">
                                                 <i class="fas fa-star"></i>
-                                                <span>4.5/2</span>
+                                                <span><?php echo $product_rating ; ?>/5</span>
                                             </div>
                                         </div>
                                         <div class="product-btn">
@@ -612,336 +633,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                                <div class="product-card card-gape">
-                                    <div class="product-img">
-                                        <img src="images/product/02.png" alt="product-2">
-                                        <ul class="product-widget">
-                                            <li><button><i class="fas fa-eye"></i></button></li>
-                                            <li><button><i class="fas fa-heart"></i></button></li>
-                                            <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-name">
-                                            <h6><a href="#">Heirloom Quinoa</a></h6>
-                                        </div>
-                                        <div class="product-price">
-                                            <h6><del>$80</del> $150</h6>
-                                            <div class="product-rating">
-                                                <i class="fas fa-star"></i>
-                                                <span>4.5/2</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-btn">
-                                            <a href="#">
-                                                <i class="fas fa-shopping-basket"></i>
-                                                <span>Add to Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                                <div class="product-card card-gape">
-                                    <div class="product-img">
-                                        <img src="images/product/03.png" alt="product-3">
-                                        <ul class="product-widget">
-                                            <li><button><i class="fas fa-eye"></i></button></li>
-                                            <li><button><i class="fas fa-heart"></i></button></li>
-                                            <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-name">
-                                            <h6><a href="#">Heirloom Quinoa</a></h6>
-                                        </div>
-                                        <div class="product-price">
-                                            <h6><del>$80</del> $150</h6>
-                                            <div class="product-rating">
-                                                <i class="fas fa-star"></i>
-                                                <span>4.5/2</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-btn">
-                                            <a href="#">
-                                                <i class="fas fa-shopping-basket"></i>
-                                                <span>Add to Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                                <div class="product-card card-gape">
-                                    <div class="product-img">
-                                        <img src="images/product/04.png" alt="product-4">
-                                        <ul class="product-widget">
-                                            <li><button><i class="fas fa-eye"></i></button></li>
-                                            <li><button><i class="fas fa-heart"></i></button></li>
-                                            <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-name">
-                                            <h6><a href="#">Heirloom Quinoa</a></h6>
-                                        </div>
-                                        <div class="product-price">
-                                            <h6><del>$80</del> $150</h6>
-                                            <div class="product-rating">
-                                                <i class="fas fa-star"></i>
-                                                <span>4.5/2</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-btn">
-                                            <a href="#">
-                                                <i class="fas fa-shopping-basket"></i>
-                                                <span>Add to Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                                <div class="product-card card-gape">
-                                    <div class="product-img">
-                                        <img src="images/product/05.png" alt="product-5">
-                                        <ul class="product-widget">
-                                            <li><button><i class="fas fa-eye"></i></button></li>
-                                            <li><button><i class="fas fa-heart"></i></button></li>
-                                            <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-name">
-                                            <h6><a href="#">Heirloom Quinoa</a></h6>
-                                        </div>
-                                        <div class="product-price">
-                                            <h6><del>$80</del> $150</h6>
-                                            <div class="product-rating">
-                                                <i class="fas fa-star"></i>
-                                                <span>4.5/2</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-btn">
-                                            <a href="#">
-                                                <i class="fas fa-shopping-basket"></i>
-                                                <span>Add to Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                                <div class="product-card card-gape">
-                                    <div class="product-img">
-                                        <img src="images/product/06.png" alt="product-6">
-                                        <ul class="product-widget">
-                                            <li><button><i class="fas fa-eye"></i></button></li>
-                                            <li><button><i class="fas fa-heart"></i></button></li>
-                                            <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-name">
-                                            <h6><a href="#">Heirloom Quinoa</a></h6>
-                                        </div>
-                                        <div class="product-price">
-                                            <h6><del>$80</del> $150</h6>
-                                            <div class="product-rating">
-                                                <i class="fas fa-star"></i>
-                                                <span>4.5/2</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-btn">
-                                            <a href="#">
-                                                <i class="fas fa-shopping-basket"></i>
-                                                <span>Add to Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                                <div class="product-card card-gape">
-                                    <div class="product-img">
-                                        <img src="images/product/07.png" alt="product-7">
-                                        <ul class="product-widget">
-                                            <li><button><i class="fas fa-eye"></i></button></li>
-                                            <li><button><i class="fas fa-heart"></i></button></li>
-                                            <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-name">
-                                            <h6><a href="#">Heirloom Quinoa</a></h6>
-                                        </div>
-                                        <div class="product-price">
-                                            <h6><del>$80</del> $150</h6>
-                                            <div class="product-rating">
-                                                <i class="fas fa-star"></i>
-                                                <span>4.5/2</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-btn">
-                                            <a href="#">
-                                                <i class="fas fa-shopping-basket"></i>
-                                                <span>Add to Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                                <div class="product-card card-gape">
-                                    <div class="product-img">
-                                        <img src="images/product/08.png" alt="product-8">
-                                        <ul class="product-widget">
-                                            <li><button><i class="fas fa-eye"></i></button></li>
-                                            <li><button><i class="fas fa-heart"></i></button></li>
-                                            <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-name">
-                                            <h6><a href="#">Heirloom Quinoa</a></h6>
-                                        </div>
-                                        <div class="product-price">
-                                            <h6><del>$80</del> $150</h6>
-                                            <div class="product-rating">
-                                                <i class="fas fa-star"></i>
-                                                <span>4.5/2</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-btn">
-                                            <a href="#">
-                                                <i class="fas fa-shopping-basket"></i>
-                                                <span>Add to Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                                <div class="product-card card-gape">
-                                    <div class="product-img">
-                                        <img src="images/product/09.png" alt="product-9">
-                                        <ul class="product-widget">
-                                            <li><button><i class="fas fa-eye"></i></button></li>
-                                            <li><button><i class="fas fa-heart"></i></button></li>
-                                            <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-name">
-                                            <h6><a href="#">Heirloom Quinoa</a></h6>
-                                        </div>
-                                        <div class="product-price">
-                                            <h6><del>$80</del> $150</h6>
-                                            <div class="product-rating">
-                                                <i class="fas fa-star"></i>
-                                                <span>4.5/2</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-btn">
-                                            <a href="#">
-                                                <i class="fas fa-shopping-basket"></i>
-                                                <span>Add to Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                                <div class="product-card card-gape">
-                                    <div class="product-img">
-                                        <img src="images/product/10.png" alt="product-10">
-                                        <ul class="product-widget">
-                                            <li><button><i class="fas fa-eye"></i></button></li>
-                                            <li><button><i class="fas fa-heart"></i></button></li>
-                                            <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-name">
-                                            <h6><a href="#">Heirloom Quinoa</a></h6>
-                                        </div>
-                                        <div class="product-price">
-                                            <h6><del>$80</del> $150</h6>
-                                            <div class="product-rating">
-                                                <i class="fas fa-star"></i>
-                                                <span>4.5/2</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-btn">
-                                            <a href="#">
-                                                <i class="fas fa-shopping-basket"></i>
-                                                <span>Add to Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                                <div class="product-card card-gape">
-                                    <div class="product-img">
-                                        <img src="images/product/11.png" alt="product-11">
-                                        <ul class="product-widget">
-                                            <li><button><i class="fas fa-eye"></i></button></li>
-                                            <li><button><i class="fas fa-heart"></i></button></li>
-                                            <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-name">
-                                            <h6><a href="#">Heirloom Quinoa</a></h6>
-                                        </div>
-                                        <div class="product-price">
-                                            <h6><del>$80</del> $150</h6>
-                                            <div class="product-rating">
-                                                <i class="fas fa-star"></i>
-                                                <span>4.5/2</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-btn">
-                                            <a href="#">
-                                                <i class="fas fa-shopping-basket"></i>
-                                                <span>Add to Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4">
-                                <div class="product-card card-gape">
-                                    <div class="product-img">
-                                        <img src="images/product/12.png" alt="product-12">
-                                        <ul class="product-widget">
-                                            <li><button><i class="fas fa-eye"></i></button></li>
-                                            <li><button><i class="fas fa-heart"></i></button></li>
-                                            <li><button><i class="fas fa-exchange-alt"></i></button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-name">
-                                            <h6><a href="#">Heirloom Quinoa</a></h6>
-                                        </div>
-                                        <div class="product-price">
-                                            <h6><del>$80</del> $150</h6>
-                                            <div class="product-rating">
-                                                <i class="fas fa-star"></i>
-                                                <span>4.5/2</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-btn">
-                                            <a href="#">
-                                                <i class="fas fa-shopping-basket"></i>
-                                                <span>Add to Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php  } ?>
+
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
